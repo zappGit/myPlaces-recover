@@ -11,7 +11,7 @@ import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let schemaVersion: UInt64 = 4
+    let schemaVersion: UInt64 = 5
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

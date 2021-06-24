@@ -64,9 +64,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.locationLabel.text = coctail.ingridients
         cell.typeLabel.text = coctail.type
         cell.imageOfPlace.image = UIImage(data: coctail.imageData!)
-      
-
-
 
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
