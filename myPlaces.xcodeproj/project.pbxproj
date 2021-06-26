@@ -21,6 +21,7 @@
 		B869842D2664FC9A00204BF5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B869842C2664FC9A00204BF5 /* RealmSwift */; };
 		B869842F2665049100204BF5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869842E2665049100204BF5 /* StorageManager.swift */; };
 		B8698431266BD5CA00204BF5 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8698430266BD5CA00204BF5 /* RatingControl.swift */; };
+		B8A26E022687A1050019EE6A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A26E012687A1050019EE6A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B8698427265AACA600204BF5 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		B869842E2665049100204BF5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B8698430266BD5CA00204BF5 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		B8A26E012687A1050019EE6A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				B823A62A2652CFFA00B77DE8 /* MyTableViewCell.swift */,
 				B823A614264EE85300B77DE8 /* SceneDelegate.swift */,
 				B823A618264EE85300B77DE8 /* Main.storyboard */,
+				B8A26E012687A1050019EE6A /* MapViewController.swift */,
 				B823A61B264EE85500B77DE8 /* Assets.xcassets */,
 				B823A61D264EE85500B77DE8 /* LaunchScreen.storyboard */,
 				B823A620264EE85500B77DE8 /* Info.plist */,
@@ -169,6 +172,7 @@
 				B823A627264EF14100B77DE8 /* MainViewController.swift in Sources */,
 				B86984262656C70200204BF5 /* PlaceModel.swift in Sources */,
 				B823A62D26557F9600B77DE8 /* CustomTableViewCell.swift in Sources */,
+				B8A26E022687A1050019EE6A /* MapViewController.swift in Sources */,
 				B823A62B2652CFFA00B77DE8 /* MyTableViewCell.swift in Sources */,
 				B8698431266BD5CA00204BF5 /* RatingControl.swift in Sources */,
 				B8698428265AACA600204BF5 /* NewPlaceViewController.swift in Sources */,

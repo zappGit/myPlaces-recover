@@ -61,6 +61,16 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        let mapVC = segue.destination as! MapViewController
+        mapVC.coctail = curentCoctail
+    }
+    
     func saveCoctail() {
         var image: UIImage?
         

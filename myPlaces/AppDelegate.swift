@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < self.schemaVersion) {
                     
+
                 }
             })
         Realm.Configuration.defaultConfiguration = config
