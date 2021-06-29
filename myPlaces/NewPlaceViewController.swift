@@ -64,21 +64,20 @@ class NewPlaceViewController: UITableViewController {
     //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
-        }
+        if segue.identifier != "showMap" { return }
         let mapVC = segue.destination as! MapViewController
-        mapVC.coctail = curentCoctail
+        mapVC.coctail.name = coctailName.text!
+        mapVC.coctail.ingridients = ingridients.text
+        mapVC.coctail.type = coctailType.text
+        mapVC.coctail.imageData = coctailImage.image?.pngData()
     }
     
     func saveCoctail() {
-        var image: UIImage?
         
-        if imageIsChanged {
-            image = coctailImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
+        
+        let image = imageIsChanged ? coctailImage.image : #imageLiteral(resourceName: "imagePlaceholder")
+        
+     
         let imageData = image?.pngData()
         
         let newCoctail = Coctail(name: coctailName.text!,
