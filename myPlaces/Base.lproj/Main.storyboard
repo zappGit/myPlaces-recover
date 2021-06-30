@@ -280,7 +280,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="Nvn-iG-IRb" kind="presentation" identifier="getAdress" id="UVx-YP-Fly"/>
+                                                        <segue destination="Nvn-iG-IRb" kind="presentation" identifier="getAddress" id="UVx-YP-Fly"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -404,6 +404,17 @@
                                     <action selector="centerViewInUserLocation" destination="Nvn-iG-IRb" eventType="touchUpInside" id="s6y-Ko-XxM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNI-g5-uob">
+                                <rect key="frame" x="177" y="796" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Fh3-nc-57g"/>
+                                    <constraint firstAttribute="height" constant="60" id="URf-V5-yIY"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="Nvn-iG-IRb" eventType="touchUpInside" id="Zgl-C7-XCv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EPK-wy-9KC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -423,11 +434,14 @@
                             <constraint firstAttribute="bottom" secondItem="Ly2-tU-ZsE" secondAttribute="bottom" id="gcJ-9p-6rg"/>
                             <constraint firstItem="Ly2-tU-ZsE" firstAttribute="top" secondItem="Vqh-jC-wsX" secondAttribute="top" id="k2l-Hl-GNZ"/>
                             <constraint firstItem="Ly2-tU-ZsE" firstAttribute="leading" secondItem="EPK-wy-9KC" secondAttribute="leading" id="pwB-DE-MWt"/>
+                            <constraint firstAttribute="bottom" secondItem="NNI-g5-uob" secondAttribute="bottom" constant="40" id="uPV-ls-xB1"/>
+                            <constraint firstItem="NNI-g5-uob" firstAttribute="centerX" secondItem="Vqh-jC-wsX" secondAttribute="centerX" id="xWc-iT-fLT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="dIh-4y-Go9" id="Ahb-bG-dEe"/>
+                        <outlet property="addressLabel" destination="dIh-4y-Go9" id="Ahb-bG-dEe"/>
                         <outlet property="doneButton" destination="fZD-dy-5gn" id="Fa2-h5-swO"/>
+                        <outlet property="goButton" destination="NNI-g5-uob" id="daZ-M9-Xfv"/>
                         <outlet property="mapPinImage" destination="NTV-i8-7eq" id="XMT-Gi-XNL"/>
                         <outlet property="mapView" destination="Ly2-tU-ZsE" id="hKh-jX-G9e"/>
                     </connections>
@@ -483,6 +497,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>

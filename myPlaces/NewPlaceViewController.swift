@@ -64,12 +64,24 @@ class NewPlaceViewController: UITableViewController {
     //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
-        let mapVC = segue.destination as! MapViewController
-        mapVC.coctail.name = coctailName.text!
-        mapVC.coctail.ingridients = ingridients.text
-        mapVC.coctail.type = coctailType.text
-        mapVC.coctail.imageData = coctailImage.image?.pngData()
+        
+        guard
+            let identifire = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+        else { return }
+            
+        
+        
+        mapVC.incomeSegueIdentifier = identifire
+        mapVC.mapViewControllerDelegate = self
+        
+        if identifire == "showPlace" {
+            mapVC.coctail.name = coctailName.text!
+            mapVC.coctail.ingridients = ingridients.text
+            mapVC.coctail.type = coctailType.text
+            mapVC.coctail.imageData = coctailImage.image?.pngData()
+        }
+        
     }
     
     func saveCoctail() {
@@ -171,5 +183,10 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
+extension NewPlaceViewController: MapViewControllerDelegate {
+    func getAddress(_ address: String?) {
+        ingridients.text = address
+    }
+}
 
 
