@@ -20,9 +20,16 @@ class MapViewController: UIViewController {
     var coctail = Coctail()
     let annotationIdentifire = "annotationIdentifire"
     let locationManager = CLLocationManager()
-    let regionInMeters = 10_000.00
+    let regionInMeters = 1_000.00
     var incomeSegueIdentifier = ""
     var placeCoordinate: CLLocationCoordinate2D?
+    var directionsArray: [MKDirections] = []
+    var previouseLocation: CLLocation? {
+        didSet {
+            startTrackingUserLocation()
+        }
+    }
+    
     
     override func viewDidLoad() {
         addressLabel.text = ""
@@ -65,6 +72,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func resetMapView(withNew directions: MKDirections){
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map{$0.cancel()}
+        directionsArray.removeAll()
+    }
     private func setupPlacemark() {
         guard let location = coctail.ingridients else { return }
         let geocoder = CLGeocoder()
@@ -142,7 +155,13 @@ class MapViewController: UIViewController {
             return
         }
         
+        locationManager.startUpdatingLocation()
+        previouseLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        
+        
+        
         let directions = MKDirections(request: request)
+        resetMapView(withNew: directions)
         directions.calculate { (response, error) in
             if let error = error {
                 print(error)
@@ -195,6 +214,16 @@ class MapViewController: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
+    private func startTrackingUserLocation() {
+        guard let previouseLocation = previouseLocation else {return}
+        let center = getCenterLocation(for: mapView)
+        guard center.distance(from: previouseLocation) > 50 else {return}
+        self.previouseLocation = center
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.showUserLocation()
+        }
+        
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -222,6 +251,13 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
         let geocoder = CLGeocoder()
+        if incomeSegueIdentifier == "showPlace" && previouseLocation != nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.showUserLocation()
+            }
+        }
+        geocoder.cancelGeocode()
+        
         geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
             if let error = error {
                 print(error)
