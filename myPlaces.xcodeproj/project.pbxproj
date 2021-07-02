@@ -22,6 +22,7 @@
 		B869842F2665049100204BF5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869842E2665049100204BF5 /* StorageManager.swift */; };
 		B8698431266BD5CA00204BF5 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8698430266BD5CA00204BF5 /* RatingControl.swift */; };
 		B8A26E022687A1050019EE6A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A26E012687A1050019EE6A /* MapViewController.swift */; };
+		B8A26E04268F8A5C0019EE6A /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A26E03268F8A5C0019EE6A /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B869842E2665049100204BF5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B8698430266BD5CA00204BF5 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		B8A26E012687A1050019EE6A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B8A26E03268F8A5C0019EE6A /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				B823A614264EE85300B77DE8 /* SceneDelegate.swift */,
 				B823A618264EE85300B77DE8 /* Main.storyboard */,
 				B8A26E012687A1050019EE6A /* MapViewController.swift */,
+				B8A26E03268F8A5C0019EE6A /* MapManager.swift */,
 				B823A61B264EE85500B77DE8 /* Assets.xcassets */,
 				B823A61D264EE85500B77DE8 /* LaunchScreen.storyboard */,
 				B823A620264EE85500B77DE8 /* Info.plist */,
@@ -174,6 +177,7 @@
 				B823A62D26557F9600B77DE8 /* CustomTableViewCell.swift in Sources */,
 				B8A26E022687A1050019EE6A /* MapViewController.swift in Sources */,
 				B823A62B2652CFFA00B77DE8 /* MyTableViewCell.swift in Sources */,
+				B8A26E04268F8A5C0019EE6A /* MapManager.swift in Sources */,
 				B8698431266BD5CA00204BF5 /* RatingControl.swift in Sources */,
 				B8698428265AACA600204BF5 /* NewPlaceViewController.swift in Sources */,
 				B823A613264EE85300B77DE8 /* AppDelegate.swift in Sources */,
